@@ -1,4 +1,7 @@
 import { Navbar } from './components/Navbar';
+import './index.css'
+import { ProductGrid } from './components/ProductGrid';
+import { BrandSection } from './components/BrandSection';
 
 function App() {
   return (
@@ -8,6 +11,8 @@ function App() {
         <h1>INCOM MX - E-commerce Industrial</h1>
         <p>Proyecto en construcción...</p>
       </div>
+      <ProductGrid />
+      <BrandSection />
     </>
   );
 }
