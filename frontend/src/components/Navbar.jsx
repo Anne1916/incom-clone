@@ -1,6 +1,7 @@
 import React from "react";
+import { SearchBar } from "./SearchBar";
 
-export const Navbar = () => {
+export const Navbar = ({ onSearch }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: '#2c5aa0'}}>
       <div className="container-fluid">
@@ -18,7 +19,7 @@ export const Navbar = () => {
         </button>
         
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <a className="nav-link" href="#productos">Productos</a>
             </li>
@@ -29,6 +30,8 @@ export const Navbar = () => {
               <a className="nav-link" href="#contacto">Contacto</a>
             </li>
           </ul>
+          
+          <SearchBar onSearch={onSearch} />
         </div>
       </div>
     </nav>
