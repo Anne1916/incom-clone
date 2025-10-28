@@ -1,8 +1,10 @@
 import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
 import './index.css'
 import { useState } from 'react';
-import { ProductGrid } from './components/ProductGrid';
-import { BrandSection } from './components/BrandSection';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { ProductDetail } from './pages/ProductDetail';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -13,15 +15,14 @@ function App() {
   };
 
   return (
-    <>
-      <Navbar  onSearch={handleSearch}/>
-      <div className="container mt-5">
-        <h1>INCOM MX - E-commerce Industrial</h1>
-        <p>Proyecto en construcción...</p>
-      </div>
-      <ProductGrid searchTerm={searchTerm} />
-      <BrandSection />
-    </>
+    <Router>
+      <Navbar onSearch={handleSearch}/>
+      <Routes>
+        <Route path="/" element={<Home searchTerm={searchTerm} />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
