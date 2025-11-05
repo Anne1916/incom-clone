@@ -1,5 +1,6 @@
 import React from "react";
 import { SearchBar } from "./SearchBar";
+import { CartIcon } from "./CartIcon";
 
 export const Navbar = ({ onSearch }) => {
   return (
@@ -30,8 +31,12 @@ export const Navbar = ({ onSearch }) => {
               <a className="nav-link" href="#contacto">Contacto</a>
             </li>
           </ul>
-          
-          <SearchBar onSearch={onSearch} />
+
+          <div className="d-flex gap-2">
+            <SearchBar onSearch={onSearch} />
+            <CartIcon />
+          </div>
+
         </div>
       </div>
     </nav>
