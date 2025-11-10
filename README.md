@@ -1,2 +1,2 @@
 # incom-clone
-E-commerce industrial - Proyecto postafolio
+E-commerce industrial - Proyecto portafolio
