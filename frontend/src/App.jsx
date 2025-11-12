@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { ProductDetail } from './pages/ProductDetail';
 import { CartProvider } from './context/CartContext';
 import { Cart } from './pages/Cart';
+import { FavoritesProvider } from './context/FavoritesContext';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,7 +18,8 @@ function App() {
   };
 
   return (
-    <CartProvider>
+    <FavoritesProvider>
+      <CartProvider>
         <Router>
             <Navbar onSearch={handleSearch}/>
             <Routes>
@@ -27,7 +29,9 @@ function App() {
             </Routes>
             <Footer />
         </Router>
-    </CartProvider>
+      </CartProvider>
+    </FavoritesProvider>
+    
 );
 }
 
