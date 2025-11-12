@@ -1,9 +1,11 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 export const ProductDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
+    const { addToCart } = useCart()
 
     const products = {
         1: {
@@ -77,7 +79,12 @@ export const ProductDetail = () => {
                     </ul>
 
                     <div className="d-grid gap-2 mt-4">
-                        <button className="btn btn-primary btn-lg">
+                        <button className="btn btn-primary btn-lg" 
+                            onClick={() => {
+                            addToCart(product);
+                            alert('¡Producto agregado con éxito!');
+                        }}
+                        >
                             <i className="fas fa-shopping-cart me-2"></i>
                             Agregar al carrito
                         </button>
