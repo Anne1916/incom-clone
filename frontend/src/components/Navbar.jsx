@@ -1,14 +1,15 @@
 import React from "react";
 import { SearchBar } from "./SearchBar";
 import { CartIcon } from "./CartIcon";
+import { Link } from "react-router-dom";
 
 export const Navbar = ({ onSearch }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: '#2c5aa0'}}>
       <div className="container-fluid">
-        <a className="navbar-brand fw-bold" href="#" style={{fontSize: '1.5rem'}}>
+        <Link className="navbar-brand fw-bold" to="/" style={{fontSize: '1.5rem'}}>
           INCOM MX
-        </a>
+        </Link>
         
         <button 
           className="navbar-toggler" 
