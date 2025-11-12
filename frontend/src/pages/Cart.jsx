@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 
 export const Cart = () => {
     
-    const {cart, removeFormCart, updateQuantity, getTotal, clearCart} = useCart()
+    const {cart, removeFromCart, updateQuantity, getTotal, clearCart} = useCart()
     const navigate = useNavigate()
     
     if(cart.items.length === 0){
@@ -49,10 +49,10 @@ export const Cart = () => {
                                             onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
                                         />
                                     </div>
-                                    <div className="col-md-2 text-en">
+                                    <div className="col-md-2 text-end">
                                         <button
                                             className="btn btn-danger btn-sm"
-                                            onClick={() => removeFormCart(item.d)}
+                                            onClick={() => removeFromCart(item.id)}
                                         >
                                             <i className="fas fa-trash"></i>
                                         </button>
