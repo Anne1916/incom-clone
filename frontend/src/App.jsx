@@ -8,6 +8,7 @@ import { ProductDetail } from './pages/ProductDetail';
 import { CartProvider } from './context/CartContext';
 import { Cart } from './pages/Cart';
 import { FavoritesProvider } from './context/FavoritesContext';
+import { Favorites } from './pages/Favorites';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/" element={<Home searchTerm={searchTerm} />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path='/favorites' element={<Favorites />}></Route>
             </Routes>
             <Footer />
         </Router>
