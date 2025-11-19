@@ -31,6 +31,12 @@ export const Navbar = ({ onSearch }) => {
             <li className="nav-item">
               <a className="nav-link" href="#contacto">Contacto</a>
             </li>
+            <li className="nav-item">
+                <Link className="nav-link" to="/favorites">
+                    <i className="fas fa-heart me-1"></i>
+                    Favoritos
+                </Link>
+            </li>
           </ul>
 
           <div className="d-flex gap-2">
