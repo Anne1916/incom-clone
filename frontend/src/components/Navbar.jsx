@@ -11,14 +11,17 @@ export const Navbar = ({ onSearch }) => {
           INCOM MX
         </Link>
         
-        <button 
-          className="navbar-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <div className="d-flex align-items-center gap-2 d-lg-none">
+          <CartIcon />
+          <button 
+            className="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
         
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto">
@@ -39,9 +42,13 @@ export const Navbar = ({ onSearch }) => {
             </li>
           </ul>
 
-          <div className="d-flex gap-2">
+          <div className="d-none d-lg-flex gap-2 align-items-center">
             <SearchBar onSearch={onSearch} />
             <CartIcon />
+          </div>
+
+          <div className="d-lg-none mt-2 mb-1">
+            <SearchBar onSearch={onSearch} />
           </div>
 
         </div>
