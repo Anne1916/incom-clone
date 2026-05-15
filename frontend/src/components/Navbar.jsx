@@ -3,11 +3,15 @@ import { SearchBar } from "./SearchBar";
 import { CartIcon } from "./CartIcon";
 import { Link } from "react-router-dom";
 
-export const Navbar = ({ onSearch }) => {
+export const Navbar = ({ onSearch, onClearSearch }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: '#2c5aa0'}}>
       <div className="container-fluid">
-        <Link className="navbar-brand fw-bold" to="/" style={{fontSize: '1.5rem'}}>
+        <Link className="navbar-brand fw-bold" 
+          to="/" 
+          style={{fontSize: '1.5rem'}}
+          onClick={onClearSearch}
+          >
           INCOM MX
         </Link>
 
@@ -26,7 +30,7 @@ export const Navbar = ({ onSearch }) => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#productos">Productos</a>
+              <a className="nav-link" href="/">Productos</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#marcas">Marcas</a>
