@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useFavorites } from "../context/FavoritesContext";
+import { productsData } from "../products";
 
 export const ProductDetail = () => {
   const { id } = useParams();
@@ -10,42 +11,7 @@ export const ProductDetail = () => {
   const { toggleFavorite, isFavorite } = useFavorites();
   
 
-  const products = {
-    1: {
-      code: "530-06N",
-      name: 'Escalera tipo tijera "doble" 5 peldaños naranja (carga 225 kg)',
-      price: "5,614.12",
-      image:
-        "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop",
-      description:
-        "Escalera profesional de fibra de vidrio con 5 peldaños. Diseñada para trabajos eléctricos y de construcción.",
-      features: [
-        "Material: Fibra de vidrio",
-        "Capacidad de carga: 225 kg",
-        "Altura: 1.5 metros",
-        "Certificación: NOM",
-        "Antideslizante",
-      ],
-    },
-    2: {
-      code: "534-24N",
-      name: "Escalera de extensión 24 peldaños naranja (carga 225 kg)",
-      price: "9,613.30",
-      image:
-        "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=400&fit=crop",
-      description:
-        "Escalera de extensión profesional para trabajos en altura. Construcción robusta y segura.",
-      features: [
-        "Material: Fibra de vidrio",
-        "Capacidad de carga: 225 kg",
-        "24 peldaños",
-        "Extensible",
-        "Sistema de seguridad incluido",
-      ],
-    },
-  };
-
-  const product = { ...products[parseInt(id)] || products[1], id: parseInt(id)}; 
+  const product = productsData.find(p => p.id === parseInt(id)) || productsData[0];
   const productIsFavorite = isFavorite(product.id);
 
   return (
