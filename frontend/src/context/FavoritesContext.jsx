@@ -5,32 +5,32 @@ const FavoritesContext = createContext();
 const favoritesReducer = (state, action) => {
     switch (action.type) {
         case 'ADD_FAVORITE':
-            const exists = state.items.find(item => item.id === action.payload.id);
+            const exists = state.items.find(item => Number(item.id) === Number(action.payload.id));
             if (exists) {
                 return state;
             }
             return {
                 ...state,
-                items: [...state.items, action.payload]
+                items: [...state.items, { ...action.payload, id: Number(action.payload.id) }]
             };
 
         case 'REMOVE_FAVORITE':
             return {
                 ...state,
-                items: state.items.filter(item => item.id !== action.payload.id)
+                items: state.items.filter(item => Number(item.id) !== Number(action.payload.id))
             };
 
         case 'TOGGLE_FAVORITE':
-            const isFavorite = state.items.find(item => item.id === action.payload.id);
+            const isFavorite = state.items.find(item => Number(item.id) === Number(action.payload.id));
             if (isFavorite) {
                 return {
                     ...state,
-                    items: state.items.filter(item => item.id !== action.payload.id)
+                    items: state.items.filter(item => Number(item.id) !== Number(action.payload.id))
                 };
             }
             return {
                 ...state,
-                items: [...state.items, action.payload]
+                items: [...state.items, { ...action.payload, id: Number(action.payload.id) }]
             };
 
         default:

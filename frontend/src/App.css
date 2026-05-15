@@ -10,7 +10,7 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-}
+}center gap-2 ms-2
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -39,4 +39,19 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.search-input {
+    border-radius: 20px;
+    width: 250px; 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .search-input {
+        width: 100%;
+        min-width: unset;
+    }
 }

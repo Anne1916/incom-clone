@@ -15,7 +15,7 @@ export const SearchBar = ({ onSearch }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="d-flex align-items-center">
+        <form onSubmit={handleSubmit} className="d-flex w-100">
             <input
                 type="text"
                 className="form-control search-input"
@@ -23,8 +23,8 @@ export const SearchBar = ({ onSearch }) => {
                 value={searchTerm}
                 onChange={handleChange}
             />
-            <button type="submit" className="btn btn-outline-light d-flex align-items-center gap-2 ms-2">
-                <i className="fas fa-search"></i>
+            <button type="submit" className="btn btn-outline-light ms-2 text-nowrap">
+                <i className="fas fa-search me-1"></i>
                 Buscar
             </button>
         </form>

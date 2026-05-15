@@ -45,7 +45,7 @@ export const ProductDetail = () => {
     },
   };
 
-  const product = products[id] || products[1]; 
+  const product = { ...products[parseInt(id)] || products[1], id: parseInt(id)}; 
   const productIsFavorite = isFavorite(product.id);
 
   return (
